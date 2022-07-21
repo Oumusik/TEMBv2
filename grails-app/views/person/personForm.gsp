@@ -14,9 +14,9 @@
     <label>Номер телефону:</label> <g:textField name="phoneNumber"/><br/>
     <label>Місто:</label> <g:textField name="city"/><br/>
     <label>Адреса:</label> <g:textField name="address"/><br/>
-    <label>Дата народження:</label> <g:datePicker name="birthDate" value="${new Date()}" noSelection="['':'-Вибрати-']"/>
+    <label>Дата народження:</label> <g:datePicker id='test'  name="birthDate"value="${new Date()}" noSelection="['':'-Вибрати-']"/>
     <label>Пароль:</label> <g:textField name="password"/><br/>
-    <g:submitButton name="createNewPerson">Далі</g:submitButton>
+    <g:submitButton name="saveNewPerson">Далі</g:submitButton>
 </g:form>
 
 </body>

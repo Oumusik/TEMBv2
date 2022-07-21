@@ -8,22 +8,15 @@ class Person {
     String phoneNumber
     String city
     String address
-    Date birthDate
-    Double age
     String password
+    String birthDate
+
 
 
     static constraints = {
         name blank: false
         surname blank: false
-        lastName blank: false
-        email email: true, unique: true
-        phoneNumber blank: false
-        city blank: false
-        address blank: false
-        password blank: false, nullable: false
-        birthDate nullable: true
-        age nullable: false
+        email email:true
     }
 
 }

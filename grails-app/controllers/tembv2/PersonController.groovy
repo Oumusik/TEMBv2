@@ -4,14 +4,21 @@ class PersonController {
 
     PersonChangerService personChangerService
 
-    def index() { }
+    def index() {
+
+    }
+
+    def mainPage(){
+        render view: 'mainPage'
+    }
 
     def createNewPerson(){
         render view: 'personForm'
     }
 
     def saveNewPerson(){
-        personChangerService.newPerson(params.name, params.surname, params.lastName, params.email, params.phoneNumber, params.city, params.address, params.password)
+        def date = params.birthDate_day.toString() + "." + params.birthDate_month + "." + params.birthDate_year.toString()
+        personChangerService.newPerson(params.name, params.surname, params.lastName, params.email, params.phoneNumber, params.city, params.address, date, params.password)
         render 'created person'
     }
 
