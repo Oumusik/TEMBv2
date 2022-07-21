@@ -20,6 +20,14 @@ class PersonController {
         render view: 'signIn'
     }
 
+    def profile(){
+        render view: 'profile'
+    }
+
+    def loginIn(){
+        render view: "loginIn"
+    }
+
     def createNewPerson(){
         render view: 'personForm'
     }
