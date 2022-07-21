@@ -12,6 +12,10 @@ class PersonController {
         render view: 'mainPage'
     }
 
+    def register(){
+        render view: 'register'
+    }
+
     def createNewPerson(){
         render view: 'personForm'
     }
