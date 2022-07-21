@@ -16,6 +16,10 @@ class PersonController {
         render view: 'register'
     }
 
+    def signIn(){
+        render view: 'signIn'
+    }
+
     def createNewPerson(){
         render view: 'personForm'
     }
