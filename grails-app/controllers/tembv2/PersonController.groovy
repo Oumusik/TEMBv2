@@ -1,11 +1,22 @@
 package tembv2
 
+import net.glxn.qrgen.android.QRCode
+
+
 class PersonController {
 
     PersonChangerService personChangerService
 
     def index() {
 
+    }
+
+    def qrtest(){
+        render view: 'qrtest'
+    }
+
+    def firstPage(){
+        render view: 'firstPage'
     }
 
     def mainPage(){
@@ -20,7 +31,7 @@ class PersonController {
         render view: 'signIn'
     }
 
-    def profile(){
+    def profile(String tokenID){
         render view: 'profile'
     }
 
@@ -30,6 +41,34 @@ class PersonController {
 
     def createNewPerson(){
         render view: 'personForm'
+    }
+
+    def congrats(){
+        render view: 'congrats'
+    }
+
+    def resetPassword(){
+        render view: 'resetPassword'
+    }
+
+    def authorise(){
+        if(params.email==""||params.password=="")
+            render view: 'mainPage'
+        else{
+            Person person = personChangerService.authorise(params.email, params.password)
+            String tokenID = personChangerService.getToken(params.email)
+            render view: 'profile', model: [person: person]
+        }
+
+    }
+
+    def showProfile(params){
+        Person person = null
+        if(Person.findByEmail(params.email)){
+            person = (Person)Person.findByEmail(params.email)
+        }
+
+        render view: 'profile', model: [person:person]
     }
 
     def saveNewPerson(){

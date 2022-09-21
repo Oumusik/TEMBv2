@@ -24,28 +24,29 @@ font-family: 'Raleway', sans-serif;">
         text-align: center;
         color: #414042;
         ">Вхід</p>
-        <form action="" style="display:flex ;flex-direction:column;">
-            <input type="email" id="mail" name="mail" placeholder="jane@example.com" style="background: #FFFFFF;
+        <g:form name='signInForm' url="[controller: 'Person', action: 'authorise']" style="display:flex ;flex-direction:column;">
+            <g:field type="email"  name="email" placeholder="jane@example.com" required style="background: #FFFFFF;
             border: 2px solid #414042;
             border-radius: 20px;
             width:343px;
             height: 52px;
-            margin-bottom:18px; padding-left: 20px;">
-            <input type="password" name="password" id="password" placeholder="пароль" style="background: #FFFFFF;
+            margin-bottom:18px; padding-left: 20px;"/>
+            <g:field type="password" name="password"  placeholder="пароль" required style="background: #FFFFFF;
             border: 2px solid #414042;
             border-radius: 20px;
             width:343px;
             height: 52px;
-            margin-bottom:22px;padding-left: 20px;">
-        </form>
-        <button style="padding: 15.1429px;
-        gap: 7.57px;
-        width: 363px;
-        height: 53px;
-        background:#2247AF;
-        border-radius: 20px;
-        border: 0px;
-        color: #FFFFFF;">Увійти</button>
+            margin-bottom:22px;padding-left: 20px;"/>
+            <g:submitButton name='Увійти' style="padding: 15.1429px;
+                    gap: 7.57px;
+                    width: 363px;
+                    height: 53px;
+                    background:#2247AF;
+                    border-radius: 20px;
+                    border: 0px;
+                    color: #FFFFFF;">Увійти</g:submitButton>
+        </g:form>
+
     </div>
 </body>
 </html>

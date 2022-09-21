@@ -10,6 +10,7 @@ buildscript {
     }
 }
 
+
 version "0.1"
 group "tembv2"
 
@@ -23,7 +24,10 @@ apply plugin:"org.grails.grails-gsp"
 
 repositories {
     maven { url "https://repo.grails.org/grails/core" }
+    maven { url "https://jitpack.io" }
 }
+
+
 
 configurations {
     developmentOnly
@@ -36,11 +40,13 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     compileOnly "io.micronaut:micronaut-inject-groovy"
     console "org.grails:grails-console"
+    implementation "com.github.agorapulse.grails-aws-sdk:aws-sdk-s3:2.4.14"
     implementation "org.springframework.boot:spring-boot-starter-logging"
     implementation "org.springframework.boot:spring-boot-starter-validation"
     implementation "org.springframework.boot:spring-boot-autoconfigure"
     implementation 'org.grails.plugins:postgresql-extensions:7.0.0'
     implementation 'org.grails.plugins:qrcode:0.9'
+    implementation 'com.github.kenglxn.QRGen:android:2.6.0'
     implementation "org.grails:grails-core"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-tomcat"
@@ -56,6 +62,7 @@ dependencies {
     implementation "org.grails.plugins:async"
     implementation "org.grails.plugins:scaffolding"
     implementation "org.grails.plugins:hibernate5"
+    implementation "org.grails.plugins:modaldynamix:1.0.3"
     implementation "org.hibernate:hibernate-core:5.6.5.Final"
     implementation "org.grails.plugins:events"
     implementation "org.grails.plugins:gsp"

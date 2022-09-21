@@ -28,6 +28,8 @@
 
     color: #7C93D3; margin-bottom: 136px;">Technical Electronic
         Medical Band</p>
+
+    <g:link controller="register" base="http://localhost:8080/Person">
     <button style="background: #2247AF;
     border: 2px solid #2247AF;
     border-radius: 20px;
@@ -40,6 +42,9 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #FFFFFF; margin-bottom: 44px;">відсканувати</button>
+    </g:link>
+
+    <g:link controller="signIn" base="http://localhost:8080/Person">
     <button style="background: #2247AF;
     border: 2px solid #2247AF;
     border-radius: 20px;
@@ -52,6 +57,9 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #FFFFFF;">увійти</button>
+    </g:link>
+
+
     </div>
 </body>
 </html>

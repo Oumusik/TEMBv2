@@ -56,7 +56,7 @@ font-family: 'Raleway', sans-serif;">
                 align-items: center;
                 color: #414042;
                 margin: 0%;
-                ">Анастасія Волошкова</p>
+                ">${person.name + " " +  person.surname}</p>
                 <div style="display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -89,7 +89,7 @@ font-family: 'Raleway', sans-serif;">
                     text-transform: capitalize;
                     color: #414042;
                     margin-top: 2%;
-                    ">м. Київ</p>
+                    ">м. ${person.city}</p>
                 </div>
                 <div style="display: flex;
                 flex-direction: row;
@@ -105,7 +105,7 @@ font-family: 'Raleway', sans-serif;">
                     align-items: center;
                     text-transform: capitalize;
                     color: #414042;
-                    margin-top: 2%;">вул. Верхня Биківська, 43, 12</p>
+                    margin-top: 2%;">вул. ${person.address}</p>
                 </div>
                 <div style="display: flex;
                 flex-direction: row;
@@ -121,8 +121,18 @@ font-family: 'Raleway', sans-serif;">
                     color: #414042;
                     margin-top: 2%;">175 см | 65 кг</p>
                 </div>
+                <div style="display: flex;
+                                flex-direction: row;
+                                align-items: flex-start;
+                                padding: 0px;
+                                gap: 8px;">
+                                    <qrcode:image height="100" width="100" text="${person.qrCodeURL}"/>
+
+                                </div>
             </div>
         </div>
+
+
 
         <div style="display: flex;
         flex-direction: row;

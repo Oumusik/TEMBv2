@@ -1,1 +1,3 @@
+include "JsqrcodeGrailsPlugin"
+
 rootProject.name = 'TEMBv2'
