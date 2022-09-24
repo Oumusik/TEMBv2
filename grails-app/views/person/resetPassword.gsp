@@ -42,7 +42,7 @@
         ">Введіть адресу електронної пошти, пов’язану з вашим обліковим записом</p>
         </div>
         <g:form name="resetPassword" url = "[controller:'Person', action: 'resetPassword']">
-            <g:textField type="email" placeholder="Email" style="width:85%;border:none;outline: none;border-radius: 16px;height: 50px;padding-left: 5%;margin-bottom: 36px;">
+            <g:textField type="email" placeholder="Email" style="width:85%;border:none;outline: none;border-radius: 16px;height: 50px;padding-left: 5%;margin-bottom: 36px;"/>
             <g:submitButton type="submit" style="width:90%;border:none;background-color:#2247AF;color:#fff;font-family: 'Montserrat';
             font-style: normal;
             font-weight: 500;
@@ -51,7 +51,7 @@
             text-align: center;
             border-radius: 20px;
             height: 50px;">Змінити пароль</g:submitButton>
-        </form>
+        </g:form>
     </div>
 </body>
 </html>

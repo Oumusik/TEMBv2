@@ -23,8 +23,8 @@ class PersonController {
         render view: 'mainPage'
     }
 
-    def register(){
-        render view: 'register'
+    def registerPage(){
+        render view: 'registerPage'
     }
 
     def signIn(){
@@ -60,6 +60,18 @@ class PersonController {
             render view: 'profile', model: [person: person]
         }
 
+    }
+
+    def register(){
+        if(params.email==""||params.password=="")
+            render view: 'registerPage'
+        else{
+            Person person = personChangerService.register(params.name, params.email, params.password, params.passwordConfirm)
+            if(person != null)
+                render view: 'profile', model: [person:person]
+            else
+                render view: 'mainPage'
+        }
     }
 
     def showProfile(params){

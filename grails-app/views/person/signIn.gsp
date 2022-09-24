@@ -46,7 +46,53 @@ font-family: 'Raleway', sans-serif;">
                     border: 0px;
                     color: #FFFFFF;">Увійти</g:submitButton>
         </g:form>
+            <div style="display: flex;flex-direction:column;align-items:center;">
+                <p style="font-family: 'Urbanist';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+                color: #6A707C;
+                ">Або увійти з</p>
+                <div>
+                    <a href=""><g:img src="./facebookRegisterButton.svg" alt=""/></a>
+                    <a href=""><g:img src="./googleRegisterButton.svg" alt=""/></a>
+                    <a href=""><g:img src="./appleRegisterButton.svg" alt=""/></a>
+                </div>
+            </div>
+            <p style="width:60%;font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 140%;
+            color: #1E232C;
+            position: absolute;
+            bottom: 2%;text-align: center;
+            ">Немає облікового запису?
+            <g:link controller="registerPage" base="http://localhost:8080/Person"
+            href="" style="color: #2C6FF5;text-decoration:none;">Зареєструватися зараз</g:link></p>
 
+
+
+            <script>
+                const togglePassword = document.querySelector("#togglePassword");
+                const password = document.querySelector("#password");
+
+                togglePassword.addEventListener("click", function () {
+                    // toggle the type attribute
+                    const type = password.getAttribute("type") === "password" ? "text" : "password";
+                    password.setAttribute("type", type);
+
+                    // toggle the icon
+                    this.classList.toggle("bi-eye");
+                });
+
+                // prevent form submit
+                const form = document.querySelector("form");
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                });
+            </script>
     </div>
 </body>
 </html>

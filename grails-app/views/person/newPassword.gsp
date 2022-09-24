@@ -71,7 +71,7 @@
             text-align: center;
             border-radius: 20px;
             height: 50px;">Змінити пароль</g:submitButton>
-        </form>
+        </g:form>
     </div>
 
     <script>

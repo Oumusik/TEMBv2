@@ -2,6 +2,7 @@ package tembv2
 
 
 import grails.gorm.transactions.Transactional
+import grails.plugin.awssdk.sqs.AmazonSQSService
 import grails.plugins.qrcode.QRCodeRenderer
 import grails.plugins.qrcode.QrCodeService
 import net.glxn.qrgen.android.BitmapIO
@@ -14,6 +15,7 @@ import java.text.SimpleDateFormat
 @Transactional
 class PersonChangerService {
 
+    AmazonSQSService amazonSQSService
     QRCodeRenderer qrcodeRenderer = new QRCodeRenderer()
     QrCodeService qrcodeService = new QrCodeService()
 
@@ -48,15 +50,29 @@ class PersonChangerService {
                 return null
             }
         }else{
-            String token = ""
-            for(def i=0;i<7;i++){
-                def number = getRandom(9)
-                token += number.toString()
+            return null
+        }
+    }
+
+    Person register(String name, String email, String password, String passwordConfirm){
+        if(Person.findByEmail(email))
+            return null
+        else{
+            if(password == passwordConfirm){
+                String token = ""
+                for(def i=0;i<7;i++){
+                    def number = getRandom(9)
+                    token += number.toString()
+                }
+
+                String url = "localhost:8080/person/showProfile?email=${email}"
+                return Person.findOrSaveWhere(email:email, password: password, tokenID:token, qrCodeURL: url, name: name)
+            }
+            else{
+                return null
             }
 
-            String url = "localhost:8080/person/authorise"
 
-            return Person.findOrSaveWhere(email:email, password: password, tokenID:token, qrCodeURL: url, name: "undefined", surname: "undefined")
         }
     }
 
@@ -80,6 +96,10 @@ class PersonChangerService {
         if(Person.findWhere(email: email)!=null){
 
         }
+    }
+
+    String createMainQueue(){
+        amazonSQSService.createQueue('Main')
     }
 
     def serviceMethod() {

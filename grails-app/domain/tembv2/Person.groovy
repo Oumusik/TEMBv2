@@ -20,7 +20,8 @@ class Person {
     String operations
     String medicines
     String qrCodeURL
-
+    int height
+    int weight
 
 
 
@@ -39,6 +40,8 @@ class Person {
         operations blank:true, nullable:true
         medicines blank:true, nullable:true
         qrCodeURL blank:true, nullable:true
+        height blank:true, nullable:true
+        weight blank:true, nullable:true
     }
 
 }

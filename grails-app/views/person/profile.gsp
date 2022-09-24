@@ -72,7 +72,7 @@ font-family: 'Raleway', sans-serif;">
                     align-items: center;
                     color: #414042;
                     margin-top: 12%;
-                ">01.05.2000</p>
+                ">${person.birthDate}</p>
                 </div>
                 <div style="display: flex;
                 flex-direction: row;
@@ -119,16 +119,15 @@ font-family: 'Raleway', sans-serif;">
                     font-size: 12px;
                     line-height: 115%;
                     color: #414042;
-                    margin-top: 2%;">175 см | 65 кг</p>
+                    margin-top: 2%;">${person.height} см | ${person.weight} кг</p>
                 </div>
                 <div style="display: flex;
-                                flex-direction: row;
-                                align-items: flex-start;
-                                padding: 0px;
-                                gap: 8px;">
-                                    <qrcode:image height="100" width="100" text="${person.qrCodeURL}"/>
-
-                                </div>
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 8px;">
+                     <qrcode:image height="100" width="100" text="${person.qrCodeURL}"/>
+                </div>
             </div>
         </div>
 
