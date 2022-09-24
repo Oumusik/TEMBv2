@@ -19,6 +19,7 @@ class PersonChangerService {
     QRCodeRenderer qrcodeRenderer = new QRCodeRenderer()
     QrCodeService qrcodeService = new QrCodeService()
 
+
     Person newPerson(String name, String surname, String lastName, String phoneNumber, String city, String address, String birthDate,String email, String password){
         //def currentDate = LocalDate.now()
         //Double age = Double.parseDouble(currentDate.year.toString()) - Double.parseDouble(birthDate.getYear())

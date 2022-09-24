@@ -8,6 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Raleway:wght@200;300;400;500;600;800&display=swap" rel="stylesheet">
+    <g:javascript library="application"/>
+    <g:javascript library="jquery"/>
+    <g:javascript library="jquery-ui"/>
+    <r:layoutResources />
+
 </head>
 <body style="background-color: #97C3F9;font-family: 'Montserrat', sans-serif;
 font-family: 'Raleway', sans-serif;">
@@ -160,7 +165,7 @@ font-family: 'Raleway', sans-serif;">
                 color: #414042;
                 ">Група крові</p>
             </div>
-            <a href=""><g:img src="/moreArrowProfile.svg" alt=""/></a>
+
         </div>
         <div style="display: flex;
         flex-direction: row;
